@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/cmake_install.cmake",
+		"C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/cmake_install.cmake",
+		"C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

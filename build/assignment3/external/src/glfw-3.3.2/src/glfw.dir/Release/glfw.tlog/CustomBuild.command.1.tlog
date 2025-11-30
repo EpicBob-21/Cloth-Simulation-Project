@@ -1,0 +1,10 @@
+^C:\USERS\KIMBE\ONEDRIVE - MASSACHUSETTS INSTITUTE OF TECHNOLOGY\SOPHOMORE\6.4400 COMPUTER GRAPHICS\ASSIGNMENT3\EXTERNAL\SRC\GLFW-3.3.2\SRC\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3" "-BC:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3" --check-stamp-file "C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/src/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

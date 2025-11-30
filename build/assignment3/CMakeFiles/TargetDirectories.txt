@@ -1,0 +1,9 @@
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/CMakeFiles/assignment3.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/CMakeFiles/INSTALL.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/CMakeFiles/ALL_BUILD.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/CMakeFiles/ZERO_CHECK.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/CMakeFiles/uninstall.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/CMakeFiles/INSTALL.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/CMakeFiles/ALL_BUILD.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir
+C:/Users/kimbe/OneDrive - Massachusetts Institute of Technology/Sophomore/6.4400 Computer Graphics/assignment3/build/assignment3/external/src/glfw-3.3.2/src/CMakeFiles/INSTALL.dir
