@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-cmake_policy(VERSION 3.5)
+cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
+cmake_policy(VERSION 3.2)
 
 set(GLM_VERSION 0.9.9)
 
@@ -19,3 +19,4 @@ set_target_properties(glm::glm PROPERTIES
 
 mark_as_advanced(glm_DIR)
 set(_IMPORT_PREFIX)
+

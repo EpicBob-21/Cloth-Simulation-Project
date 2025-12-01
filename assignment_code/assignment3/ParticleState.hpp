@@ -11,9 +11,6 @@ struct ParticleState {
   // The state of a particle system: positions and velocities.
   std::vector<glm::vec3> positions;
   std::vector<glm::vec3> velocities;
-  std::vector<glm::vec4> springs; //particle i,j, spring constant k, rest length r
-  std::vector<int> fixed_pts;
-  float drag;
 
   ParticleState& operator+=(const ParticleState& rhs) {
     if (positions.size() != rhs.positions.size() ||
@@ -56,7 +53,6 @@ inline ParticleState operator*(float k, ParticleState s1) {
   s1 *= k;
   return s1;
 }
-
 }  // namespace GLOO
 
 #endif

@@ -1,4 +1,8 @@
 #include "SimulationApp.hpp"
+#include "CircleSphereNode.hpp"
+#include "PendulumNode.hpp"
+#include "ClothNode.hpp"
+
 
 #include "glm/gtx/string_cast.hpp"
 
@@ -13,9 +17,8 @@
 #include "gloo/lights/AmbientLight.hpp"
 #include "gloo/cameras/ArcBallCameraNode.hpp"
 #include "gloo/debug/AxisNode.hpp"
-#include "BallNode.hpp"
-#include "PendulumNode.hpp"
-#include "ClothNode.hpp"
+#include "gloo/debug/PrimitiveFactory.hpp"
+
 
 
 namespace GLOO {
@@ -29,9 +32,6 @@ SimulationApp::SimulationApp(const std::string& app_name,
   // TODO: remove the following two lines and use integrator type and step to
   // create integrators; the lines below exist only to suppress compiler
   // warnings.
-  UNUSED(integrator_type_);
-  UNUSED(integration_step_);
-
 }
 
 void SimulationApp::SetupScene() {
@@ -56,7 +56,17 @@ void SimulationApp::SetupScene() {
   point_light_node->GetTransform().SetPosition(glm::vec3(0.0f, 2.0f, 4.f));
   root.AddChild(std::move(point_light_node));
 
-  auto cloth = make_unique<ClothNode>(integrator_type_, integration_step_);
-  root.AddChild(std::move(cloth));
+
+  auto color = glm::vec3(0.8f, 0.3f, 0.3f);
+  auto circle_sphere_node = make_unique<CircleSphereNode>(integrator_type_, color, integration_step_);
+  root.AddChild(std::move(circle_sphere_node));
+
+  auto pendulum_node = make_unique<PendulumNode>(integrator_type_, color, integration_step_);
+  root.AddChild(std::move(pendulum_node));
+
+  auto cloth_node = make_unique<ClothNode>(integrator_type_, color, integration_step_);
+  root.AddChild(std::move(cloth_node));
+  
+  
 }
 }  // namespace GLOO

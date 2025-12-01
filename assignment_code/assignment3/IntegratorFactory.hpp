@@ -2,15 +2,14 @@
 #define INTEGRATOR_FACTORY_H_
 
 #include "IntegratorBase.hpp"
+#include "ForwardRK4Integrator.hpp"
+#include "AdaptiveRK45Integrator.hpp"
 
 #include <stdexcept>
 
 #include "gloo/utils.hpp"
 
 #include "IntegratorType.hpp"
-#include "ForwardEulerIntegrator.hpp"
-#include "ForwardTrapezoidalIntegrator.hpp"
-#include "RK4Integrator.hpp"
 
 namespace GLOO {
 class IntegratorFactory {
@@ -18,15 +17,15 @@ class IntegratorFactory {
   template <class TSystem, class TState>
   static std::unique_ptr<IntegratorBase<TSystem, TState>> CreateIntegrator(
       IntegratorType type) {
-    if(type == IntegratorType::Euler){
-      return make_unique<ForwardEulerIntegrator<TSystem, TState>>();
-    }
-    else if(type == IntegratorType::Trapezoidal){
-      return make_unique<ForwardTrapezoidalIntegrator<TSystem, TState>>();
-    }
-    else if(type == IntegratorType::RK4){
-      return make_unique<RK4Integrator<TSystem, TState>>();
-    }
+        if (type == IntegratorType::Euler) {
+          return make_unique<ForwardEulerIntegrator<TSystem, TState>>();
+        } else if (type == IntegratorType::Trapezoidal) {
+          return make_unique<ForwardTrapezoidIntegrator<TSystem, TState>>();
+        } else if (type == IntegratorType::RK4) {
+          return make_unique<ForwardRK4Integrator<TSystem, TState>>();
+        } else if (type == IntegratorType::AdaptiveRK45) {
+          return make_unique<AdaptiveRK45Integrator<TSystem, TState>>();
+        }
   }
 };
 }  // namespace GLOO
