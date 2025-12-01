@@ -1,8 +1,8 @@
 CMakeFiles/assignment3.dir/gloo/gl_wrapper/BindableBuffer.cpp.o: \
-  /Users/azhang/Documents/25-26/64400/assignment3/gloo/gl_wrapper/BindableBuffer.cpp \
-  /Users/azhang/Documents/25-26/64400/assignment3/gloo/gl_wrapper/BindableBuffer.hpp \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glad/include/glad/glad.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glad/include/KHR/khrplatform.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/gl_wrapper/BindableBuffer.cpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/gl_wrapper/BindableBuffer.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/include/glad/glad.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/include/KHR/khrplatform.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -27,7 +27,7 @@ CMakeFiles/assignment3.dir/gloo/gl_wrapper/BindableBuffer.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/gloo/gl_wrapper/IBindable.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/gl_wrapper/IBindable.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assertion_handler \
@@ -174,7 +174,7 @@ CMakeFiles/assignment3.dir/gloo/gl_wrapper/BindableBuffer.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/invoke.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/unwrap_ref.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/gloo/utils.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/utils.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/promote.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \

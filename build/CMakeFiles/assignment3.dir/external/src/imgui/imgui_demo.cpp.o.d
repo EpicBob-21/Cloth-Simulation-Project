@@ -1,7 +1,7 @@
 CMakeFiles/assignment3.dir/external/src/imgui/imgui_demo.cpp.o: \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imgui_demo.cpp \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imgui.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imconfig.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imgui_demo.cpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imgui.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

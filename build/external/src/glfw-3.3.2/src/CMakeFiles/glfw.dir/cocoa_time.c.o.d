@@ -1,8 +1,8 @@
 external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_time.c.o: \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/cocoa_time.c \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/internal.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/build/external/src/glfw-3.3.2/src/glfw_config.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/../include/GLFW/glfw3.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/cocoa_time.c \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/internal.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build/external/src/glfw-3.3.2/src/glfw_config.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/../include/GLFW/glfw3.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stddef_header_macro.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stddef_ptrdiff_t.h \
@@ -31,7 +31,7 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_time.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/cocoa_platform.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/cocoa_platform.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/dlfcn.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdbool.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -797,12 +797,12 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_time.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/SecurityHI.framework/Headers/SecCertificateSupport.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/Help.framework/Headers/Help.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Frameworks/Help.framework/Headers/AppleHelp.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/posix_thread.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/posix_thread.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/qos.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/cocoa_joystick.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/cocoa_joystick.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOCFPlugIn.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFPlugInCOM.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOKit.framework/Headers/hid/IOHIDLib.h \
@@ -822,8 +822,8 @@ external/src/glfw-3.3.2/src/CMakeFiles/glfw.dir/cocoa_time.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOKit.framework/Headers/hid/IOHIDUsageTables.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOKit.framework/Headers/hid/IOHIDValue.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOKit.framework/Headers/hid/IOHIDTransaction.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/nsgl_context.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/nsgl_context.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdatomic.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/egl_context.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src/osmesa_context.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/egl_context.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src/osmesa_context.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/mach_time.h

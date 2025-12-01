@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/azhang/Documents/25-26/64400/assignment3
+CMAKE_SOURCE_DIR = /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/azhang/Documents/25-26/64400/assignment3/build
+CMAKE_BINARY_DIR = /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/compiler_depend.make
 include external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/progress.make
 
 external/src/glfw-3.3.2/CMakeFiles/uninstall:
-	cd /Users/azhang/Documents/25-26/64400/assignment3/build/external/src/glfw-3.3.2 && /opt/homebrew/bin/cmake -P /Users/azhang/Documents/25-26/64400/assignment3/build/external/src/glfw-3.3.2/cmake_uninstall.cmake
+	cd /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build/external/src/glfw-3.3.2 && /opt/homebrew/bin/cmake -P /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build/external/src/glfw-3.3.2/cmake_uninstall.cmake
 
 external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/codegen:
 .PHONY : external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/codegen
@@ -81,10 +81,10 @@ external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/build
 
 external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/clean:
-	cd /Users/azhang/Documents/25-26/64400/assignment3/build/external/src/glfw-3.3.2 && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build/external/src/glfw-3.3.2 && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/clean
 
 external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/depend:
-	cd /Users/azhang/Documents/25-26/64400/assignment3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/azhang/Documents/25-26/64400/assignment3 /Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2 /Users/azhang/Documents/25-26/64400/assignment3/build /Users/azhang/Documents/25-26/64400/assignment3/build/external/src/glfw-3.3.2 /Users/azhang/Documents/25-26/64400/assignment3/build/external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2 /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build/external/src/glfw-3.3.2 /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build/external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/src/glfw-3.3.2/CMakeFiles/uninstall.dir/depend
 

@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/include -I/Users/azhang/Documents/25-26/64400/assignment3/external/src/glfw-3.3.2/src -I/Users/azhang/Documents/25-26/64400/assignment3/build/external/src/glfw-3.3.2/src
+C_INCLUDES = -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/include -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/src -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/build/external/src/glfw-3.3.2/src
 
 C_FLAGSx86_64 = -O3 -DNDEBUG -std=gnu99 -arch x86_64 -mmacosx-version-min=11.0 -fPIC -Wall
 

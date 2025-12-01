@@ -1,5 +1,5 @@
 CMakeFiles/assignment3.dir/external/src/glad/src/glad.c.o: \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glad/src/glad.c \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/src/glad.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \
@@ -90,7 +90,7 @@ CMakeFiles/assignment3.dir/external/src/glad/src/glad.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_strings.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_strings.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/secure/_string.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glad/include/glad/glad.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glad/include/KHR/khrplatform.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/include/glad/glad.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/include/KHR/khrplatform.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/dlfcn.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdbool.h

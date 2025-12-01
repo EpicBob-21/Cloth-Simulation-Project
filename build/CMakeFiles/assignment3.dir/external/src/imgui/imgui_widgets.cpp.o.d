@@ -1,7 +1,7 @@
 CMakeFiles/assignment3.dir/external/src/imgui/imgui_widgets.cpp.o: \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imgui_widgets.cpp \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imgui.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imconfig.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imgui_widgets.cpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imgui.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -107,7 +107,7 @@ CMakeFiles/assignment3.dir/external/src/imgui/imgui_widgets.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imgui_internal.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imgui_internal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h \
@@ -283,7 +283,7 @@ CMakeFiles/assignment3.dir/external/src/imgui/imgui_widgets.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/limits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_limits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imstb_textedit.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imstb_textedit.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ctype.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctype.h \

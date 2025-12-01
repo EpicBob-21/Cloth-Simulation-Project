@@ -1,7 +1,7 @@
 CMakeFiles/assignment3.dir/external/src/imgui/examples/imgui_impl_opengl3.cpp.o: \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/examples/imgui_impl_opengl3.cpp \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imgui.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/imconfig.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/examples/imgui_impl_opengl3.cpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imgui.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -107,7 +107,7 @@ CMakeFiles/assignment3.dir/external/src/imgui/examples/imgui_impl_opengl3.cpp.o:
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/imgui/examples/imgui_impl_opengl3.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/examples/imgui_impl_opengl3.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h \
@@ -117,5 +117,5 @@ CMakeFiles/assignment3.dir/external/src/imgui/examples/imgui_impl_opengl3.cpp.o:
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_seek_set.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctermid.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glad/include/glad/glad.h \
-  /Users/azhang/Documents/25-26/64400/assignment3/external/src/glad/include/KHR/khrplatform.h
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/include/glad/glad.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/include/KHR/khrplatform.h
