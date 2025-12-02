@@ -1,7 +1,7 @@
 #include "SimulationApp.hpp"
 #include "CircleSphereNode.hpp"
 #include "PendulumNode.hpp"
-#include "ClothNode.hpp"
+#include "ClothNodeSmooth.hpp"
 
 
 #include "glm/gtx/string_cast.hpp"
@@ -53,7 +53,7 @@ void SimulationApp::SetupScene() {
   point_light->SetAttenuation(glm::vec3(1.0f, 0.09f, 0.032f));
   auto point_light_node = make_unique<SceneNode>();
   point_light_node->CreateComponent<LightComponent>(point_light);
-  point_light_node->GetTransform().SetPosition(glm::vec3(0.0f, 2.0f, 4.f));
+  point_light_node->GetTransform().SetPosition(glm::vec3(10.0f, 5.0f, 5.f));
   root.AddChild(std::move(point_light_node));
 
 
@@ -66,7 +66,12 @@ void SimulationApp::SetupScene() {
 
   auto cloth_node = make_unique<ClothNode>(integrator_type_, color, integration_step_);
   root.AddChild(std::move(cloth_node));
-  
-  
+
+  auto color2 = glm::vec3(0.3f, 0.8f, 0.3f);
+
+  auto cloth_node2 = make_unique<ClothNodeSmooth>(integrator_type_, color,glm::vec3(1.0,1.0,0.0), integration_step_, 8);
+  root.AddChild(std::move(cloth_node2));
+
+
 }
 }  // namespace GLOO
