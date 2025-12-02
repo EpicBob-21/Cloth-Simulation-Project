@@ -20,7 +20,7 @@
 // More include here
 namespace GLOO {
 
-    ClothNodeSmooth::ClothNodeSmooth(IntegratorType integrator_type, glm::vec3 color, float h) :
+    ClothNodeSmooth::ClothNodeSmooth(IntegratorType integrator_type, glm::vec3 color, glm::vec3 top_left_pos, float h, int dim) :
         SceneNode(),
         integrator_(IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type)),
         state_(make_unique<ParticleState>()),
@@ -31,48 +31,49 @@ namespace GLOO {
         // point_mesh_ = PrimitiveFactory::CreateSphere(0.06f, 25, 25);
         material_ = std::make_shared<Material>(color, color, color, 0);
         // line_material_ = std::make_shared<Material>(glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(1.0f, 1.0f, 1.0f), 0);
-
+        DIM = dim;
+        top_left_corner_pos_ = top_left_pos;
         system_->FixMass(0);
-        system_->FixMass(7);
-        state_->positions.resize(64);
-        state_->velocities.resize(64);
+        system_->FixMass(DIM-1);
+        state_->positions.resize(DIM*DIM);
+        state_->velocities.resize(DIM*DIM);
 
         auto indices = make_unique<IndexArray>();
 
-        for (float i = 0; i < 8; i++) {
-            for (float j = 0; j < 8; j++) {
+        for (float i = 0; i < DIM; i++) {
+            for (float j = 0; j < DIM; j++) {
                 float r = 1.0f;
 
-                system_->AddMass(i*8 + j, r, 0.088f);
+                system_->AddMass(i*DIM + j, r, 0.088f);
 
                 if (i > 0) {
                     // strucutral
-                    system_->AddSpring((i - 1)*8 + j, i*8 + j, 1000.0f, r);
+                    system_->AddSpring((i - 1)*DIM + j, i*DIM + j, 100.0f, r);
                     //vertical line
-                    indices->push_back((i - 1)*8 + j);
-                    indices->push_back(i*8 + j);
+                    indices->push_back((i - 1)*DIM + j);
+                    indices->push_back(i*DIM + j);
                     if (i > 1) {
                         // flexion
-                        system_->AddSpring((i - 2)*8 + j, i*8 + j, 1000.0f, 2*r);
+                        system_->AddSpring((i - 2)*DIM + j, i*DIM + j, 100.0f, 2*r);
                     }
                 }
 
                 if (j > 0) {
                     // structural
-                    system_->AddSpring(i*8 + (j - 1), i*8 + j, 1000.0f, r);
+                    system_->AddSpring(i*DIM + (j - 1), i*DIM + j, 100.0f, r);
 
                     // horizontal line
                     // indices->push_back(i*8 + (j - 1));
                     // indices->push_back(i*8 + j);
                     if (j > 1) {
                         // flexion
-                        system_->AddSpring(i*8 + (j - 2), i*8 + j, 1000.0f, 2*r);
+                        system_->AddSpring(i*DIM + (j - 2), i*DIM + j, 100.0f, 2*r);
                     }
                 }
 
                 if (i > 0 && j > 0) {
                     //shear
-                    system_->AddSpring((i - 1)*8 + (j - 1), i*8 + j, 10000.0f, glm::sqrt(2*r));
+                    system_->AddSpring((i - 1)*DIM + (j - 1), i*DIM + j, 1000.0f, glm::sqrt(2.0f*r));
                 }
 
                 // auto point_node_ptr = make_unique<SceneNode>();
@@ -99,7 +100,6 @@ namespace GLOO {
         cloth_mesh_ = std::make_shared<VertexObject>();
 
         auto triangle_indices = make_unique<IndexArray>();
-        const int DIM = 8; // Assuming an 8x8 grid (8 nodes per side)
 
         // Create triangles for the cloth grid
         for (int i = 0; i < DIM - 1; i++) {
@@ -171,7 +171,6 @@ namespace GLOO {
         }
 
         // Calculate Smooth Normals
-        const int DIM = 8;
         for (int i = 0; i < DIM; i++) {
             for (int j = 0; j < DIM; j++) {
                 int current_idx = i * DIM + j;
@@ -225,12 +224,12 @@ namespace GLOO {
         auto positions = make_unique<PositionArray>();
         auto normals = make_unique<NormalArray>();
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                int idx = i * 8 + j;
+        for (int i = 0; i < DIM; i++) {
+            for (int j = 0; j < DIM; j++) {
+                int idx = i * DIM + j;
 
                 // Reset State
-                state_->positions[idx] = (glm::vec3(j + 2.4f, 0.0f, i));
+                state_->positions[idx] = (glm::vec3(j + top_left_corner_pos_.x, top_left_corner_pos_.y, i+top_left_corner_pos_.z));
                 state_->velocities[idx] = (glm::vec3(0.0f, 0.0f, 0.0f));
 
                 // Reset Visuals for Cloth Mesh

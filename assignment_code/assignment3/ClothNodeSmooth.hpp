@@ -17,12 +17,14 @@
 namespace GLOO {
     class ClothNodeSmooth : public SceneNode {
         public:
-            ClothNodeSmooth(IntegratorType integrator_type, glm::vec3 material, float h);
+            ClothNodeSmooth(IntegratorType integrator_type, glm::vec3 material, glm::vec3 top_left_pos, float h, int dim = 8);
             void Update(double dt) override;
             void Restart();
 
         private:
             float h_;
+            int DIM;
+            glm::vec3 top_left_corner_pos_;
             std::shared_ptr<VertexObject> point_mesh_;
             std::shared_ptr<VertexObject> cloth_mesh_;
             std::shared_ptr<ShaderProgram> shader_;
