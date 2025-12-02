@@ -53,7 +53,7 @@ class SceneNode {
 
   template <class T, typename... Args>
   T& CreateComponent(Args&&... args) {
-    AddComponent(make_unique<T>(std::forward<Args>(args)...));
+    AddComponent(GLOO::make_unique<T>(std::forward<Args>(args)...));
     return *GetComponentPtr<T>();
   }
 

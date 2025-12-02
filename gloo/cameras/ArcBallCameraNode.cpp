@@ -194,26 +194,26 @@ void ArcBallCameraNode::PlotAxes() {
   indices.push_back(0);
   indices.push_back(1);
 
-  x_line->UpdateIndices(make_unique<IndexArray>(indices));
-  y_line->UpdateIndices(make_unique<IndexArray>(indices));
-  z_line->UpdateIndices(make_unique<IndexArray>(indices));
+  x_line->UpdateIndices(GLOO::make_unique<IndexArray>(indices));
+  y_line->UpdateIndices(GLOO::make_unique<IndexArray>(indices));
+  z_line->UpdateIndices(GLOO::make_unique<IndexArray>(indices));
 
-  auto x_positions = make_unique<PositionArray>();
+  auto x_positions = GLOO::make_unique<PositionArray>();
   x_positions->push_back(glm::vec3(-1.f, 0, 0));
   x_positions->push_back(glm::vec3(1.f, 0, 0));
   x_line->UpdatePositions(std::move(x_positions));
 
-  auto y_positions = make_unique<PositionArray>();
+  auto y_positions = GLOO::make_unique<PositionArray>();
   y_positions->push_back(glm::vec3(0, -1.f, 0));
   y_positions->push_back(glm::vec3(0, 1.f, 0));
   y_line->UpdatePositions(std::move(y_positions));
 
-  auto z_positions = make_unique<PositionArray>();
+  auto z_positions = GLOO::make_unique<PositionArray>();
   z_positions->push_back(glm::vec3(0, 0, -1.f));
   z_positions->push_back(glm::vec3(0, 0, 1.f));
   z_line->UpdatePositions(std::move(z_positions));
 
-  auto line_node = make_unique<SceneNode>();
+  auto line_node = GLOO::make_unique<SceneNode>();
   line_node->CreateComponent<ShadingComponent>(line_shader);
   auto& rc_x_line = line_node->CreateComponent<RenderingComponent>(x_line);
   rc_x_line.SetDrawMode(DrawMode::Lines);
@@ -224,7 +224,7 @@ void ArcBallCameraNode::PlotAxes() {
   x_line_node_ptr_->SetActive(false);
   AddChild(std::move(line_node));
 
-  line_node = make_unique<SceneNode>();
+  line_node = GLOO::make_unique<SceneNode>();
   line_node->CreateComponent<ShadingComponent>(line_shader);
   auto& rc_y_line = line_node->CreateComponent<RenderingComponent>(y_line);
   rc_y_line.SetDrawMode(DrawMode::Lines);
@@ -235,7 +235,7 @@ void ArcBallCameraNode::PlotAxes() {
   y_line_node_ptr_->SetActive(false);
   AddChild(std::move(line_node));
 
-  line_node = make_unique<SceneNode>();
+  line_node = GLOO::make_unique<SceneNode>();
   line_node->CreateComponent<ShadingComponent>(line_shader);
   auto& rc_z_line = line_node->CreateComponent<RenderingComponent>(z_line);
   rc_z_line.SetDrawMode(DrawMode::Lines);

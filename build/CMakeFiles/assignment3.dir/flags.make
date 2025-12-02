@@ -17,9 +17,9 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glad/include -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/imgui/examples -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/stb -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3 -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/common -I/Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glfw-3.3.2/include -isystem /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glm-0.9.9.8
 
-CXX_FLAGSx86_64 =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -O3 -DNDEBUG -O3 -std=gnu++11 -arch x86_64 -mmacosx-version-min=11.0 -Wall
+CXX_FLAGSx86_64 =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -O3 -DNDEBUG -O3 -std=gnu++14 -arch x86_64 -mmacosx-version-min=11.0 -Wall
 
-CXX_FLAGSarm64 =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -O3 -DNDEBUG -O3 -std=gnu++11 -arch arm64 -mmacosx-version-min=11.0 -Wall
+CXX_FLAGSarm64 =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -O3 -DNDEBUG -O3 -std=gnu++14 -arch arm64 -mmacosx-version-min=11.0 -Wall
 
-CXX_FLAGS =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -O3 -DNDEBUG -O3 -std=gnu++11 -arch x86_64 -arch arm64 -mmacosx-version-min=11.0 -Wall
+CXX_FLAGS =  -DIMGUI_IMPL_OPENGL_LOADER_GLAD -O3 -DNDEBUG -O3 -std=gnu++14 -arch x86_64 -arch arm64 -mmacosx-version-min=11.0 -Wall
 

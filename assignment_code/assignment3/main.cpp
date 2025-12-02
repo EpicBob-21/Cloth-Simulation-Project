@@ -37,6 +37,9 @@ int main(int argc, char** argv) {
     case 'a':
       integrator_type = IntegratorType::AdaptiveRK45;
       break;
+    case 'c':
+      integrator_type = IntegratorType::CubicBarrier;
+      break;
     default:
       throw std::runtime_error(
           "Unrecognized integrator type: " + std::string(1, argv[1][0]) + ".");
