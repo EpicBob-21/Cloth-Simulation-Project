@@ -20,8 +20,8 @@
 // More include here
 namespace GLOO {
 
-    ClothNode::ClothNode(IntegratorType integrator_type, glm::vec3 color, float h) : 
-        SceneNode(), 
+    ClothNode::ClothNode(IntegratorType integrator_type, glm::vec3 color, float h) :
+        SceneNode(),
         integrator_(IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type)),
         state_(make_unique<ParticleState>()),
         system_(make_unique<PendulumSystem>()),
@@ -44,7 +44,7 @@ namespace GLOO {
                 float r = 1.0f;
 
                 system_->AddMass(i*8 + j, r, 0.088f);
-                
+
                 if (i > 0) {
                     // strucutral
                     system_->AddSpring((i - 1)*8 + j, i*8 + j, 1000.0f, r);
@@ -83,7 +83,7 @@ namespace GLOO {
 
                 points_.push_back(point_node_ptr.get());
                 AddChild(std::move(point_node_ptr));
-            }    
+            }
         }
         all_line_ = std::make_shared<VertexObject>();
         all_line_->UpdateIndices(std::move(indices));
@@ -97,7 +97,7 @@ namespace GLOO {
         auto& rc = line_node->CreateComponent<RenderingComponent>(all_line_);
         rc.SetDrawMode(DrawMode::Lines);
         AddChild(std::move(line_node));
-        
+
     }
 
     void ClothNode::Update(double dt) {
@@ -111,7 +111,7 @@ namespace GLOO {
             }
             restart_prev_released = true;
         }
-        
+
         static bool wind_prev_released = true;
         if (InputManager::GetInstance().IsKeyPressed('W')) {
             wind_prev_released = false;
@@ -161,7 +161,7 @@ namespace GLOO {
         for (float i = 0; i < 8; i++) {
             for (float j = 0; j < 8; j++) {
                 // updating state's x and v
-                state_->positions[i*8+j] = (glm::vec3(j + 2.4f, 0.0f, i));                
+                state_->positions[i*8+j] = (glm::vec3(j + 2.4f, 0.0f, i));
                 state_->velocities[i*8+j] = (glm::vec3(0.0f, 0.0f, 0.0f));
 
                 // for lines
@@ -171,7 +171,7 @@ namespace GLOO {
                 float r = 1.0f;
 
                 points_[i*8+j]->GetTransform().SetPosition(state_->positions[i]);
-            }    
+            }
         }
 
         all_line_->UpdatePositions(std::move(positions));

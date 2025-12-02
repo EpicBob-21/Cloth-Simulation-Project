@@ -1,7 +1,7 @@
 #include "SimulationApp.hpp"
 #include "CircleSphereNode.hpp"
 #include "PendulumNode.hpp"
-#include "ClothNode.hpp"
+#include "ClothNodeSmooth.hpp"
 
 
 #include "glm/gtx/string_cast.hpp"
@@ -58,15 +58,10 @@ void SimulationApp::SetupScene() {
 
 
   auto color = glm::vec3(0.8f, 0.3f, 0.3f);
-  auto circle_sphere_node = make_unique<CircleSphereNode>(integrator_type_, color, integration_step_);
-  root.AddChild(std::move(circle_sphere_node));
 
-  auto pendulum_node = make_unique<PendulumNode>(integrator_type_, color, integration_step_);
-  root.AddChild(std::move(pendulum_node));
-
-  auto cloth_node = make_unique<ClothNode>(integrator_type_, color, integration_step_);
+  auto cloth_node = make_unique<ClothNodeSmooth>(integrator_type_, color, integration_step_);
   root.AddChild(std::move(cloth_node));
-  
-  
+
+
 }
 }  // namespace GLOO
