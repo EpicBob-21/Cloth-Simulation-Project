@@ -64,8 +64,8 @@ void SimulationApp::SetupScene() {
   // auto pendulum_node = make_unique<PendulumNode>(integrator_type_, color, integration_step_);
   // root.AddChild(std::move(pendulum_node));
 
-  auto cloth_node = make_unique<ClothNode>(integrator_type_, color, integration_step_);
-  root.AddChild(std::move(cloth_node));
+  // auto cloth_node = make_unique<ClothNode>(integrator_type_, color, integration_step_);
+  // root.AddChild(std::move(cloth_node));
 
   auto color2 = glm::vec3(0.3f, 0.8f, 0.3f);
 
