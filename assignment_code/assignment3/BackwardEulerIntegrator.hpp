@@ -25,6 +25,7 @@ public:
         auto df_dx = system.ComputeForceJacobian(state);  // ∂f/∂x
         auto df_dv = system.ComputeDampingJacobian(state); // ∂f/∂v
         auto M_inv = system.GetInverseMassMatrix();
+        auto M = system.GetMassMatrix();
         
         // Build the linear system (Equation 6):
         // (I - h*M^-1*∂f/∂v - h²*M^-1*∂f/∂x) Δv = h*M^-1(f0 + h*∂f/∂x*v0)
@@ -60,6 +61,8 @@ private:
         float dt) const {
         
         // A = M - h*∂f/∂v - h²*∂f/∂x
+
+        // equation 6
         auto M = system.GetMassMatrix();
         return M - dt * df_dv - dt * dt * df_dx;
     }
@@ -72,9 +75,18 @@ private:
         float dt) const {
         
         // b = h(f0 + h*∂f/∂x*v0)
-        std::vector<glm::vec3> result;
-        // ... implementation
-        return result;
+        size_t n = f0.size();
+        std::vector<glm::vec3> b(n, glm::vec3(0.0f));
+        for (size_t i = 0; i < n; i++) {
+            glm::vec3 df_dx_v0(0.0f);
+            for (Eigen::SparseMatrix<float>::InnerIterator it(df_dx, 3*i); it; ++it) {
+                int col = it.col();
+                float value = it.value();
+                df_dx_v0 += value * v0[col / 3]; // col/3 to get particle index
+            }
+            b[i] = dt * (f0[i] + dt * df_dx_v0);
+        }
+        return b;
     }
 };
 
