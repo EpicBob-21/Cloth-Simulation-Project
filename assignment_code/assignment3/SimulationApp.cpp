@@ -2,6 +2,7 @@
 #include "CircleSphereNode.hpp"
 #include "PendulumNode.hpp"
 #include "ClothNodeSmooth.hpp"
+#include "ClothNodeSmoothV2.hpp"
 
 
 #include "glm/gtx/string_cast.hpp"
@@ -65,10 +66,13 @@ void SimulationApp::SetupScene() {
   // auto cloth_node = make_unique<ClothNode>(integrator_type_, color, integration_step_);
   // root.AddChild(std::move(cloth_node));
 
-  auto color2 = glm::vec3(0.3f, 0.8f, 0.3f);
+  // auto color2 = glm::vec3(0.3f, 0.8f, 0.3f);
 
-  auto cloth_node2 = make_unique<ClothNodeSmooth>(integrator_type_, color,glm::vec3(1.0,1.0,0.0), integration_step_, 8);
-  root.AddChild(std::move(cloth_node2));
+  // auto cloth_node_smooth = make_unique<ClothNodeSmooth>(integrator_type_, color ,glm::vec3(1.0,1.0,0.0), integration_step_, 8);
+  // root.AddChild(std::move(cloth_node_smooth));
+
+  auto cloth_node_smooth_2 = make_unique<ClothNodeSmoothV2>(integrator_type_, color ,glm::vec3(1.0,1.0,0.0), integration_step_, 8);
+  root.AddChild(std::move(cloth_node_smooth_2));
 
 
 }

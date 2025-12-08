@@ -22,10 +22,11 @@ namespace GLOO {
 
     ClothNode::ClothNode(IntegratorType integrator_type, glm::vec3 color, float h) :
         SceneNode(),
+        h_(h),
         integrator_(IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type)),
         state_(make_unique<ParticleState>()),
-        system_(make_unique<PendulumSystem>()),
-        h_(h){
+        system_(make_unique<PendulumSystem>())
+        {
 
         shader_ = std::make_shared<PhongShader>();
         point_mesh_ = PrimitiveFactory::CreateSphere(0.06f, 25, 25);
@@ -167,8 +168,6 @@ namespace GLOO {
                 // for lines
                 positions->push_back(glm::vec3(j + 2.4f, 0.0f, i));
                 normals->push_back(glm::vec3(0.0f, 1.0f, 0.0f));
-
-                float r = 1.0f;
 
                 points_[i*8+j]->GetTransform().SetPosition(state_->positions[i]);
             }

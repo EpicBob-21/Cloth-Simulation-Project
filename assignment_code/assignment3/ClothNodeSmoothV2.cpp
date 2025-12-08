@@ -1,4 +1,4 @@
-#include "ClothNodeSmooth.hpp"
+#include "ClothNodeSmoothV2.hpp"
 #include "ParticleState.hpp"
 #include "ForwardEulerIntegrator.hpp"
 #include "ForwardTrapezoidIntegrator.hpp"
@@ -21,12 +21,12 @@
 // More include here
 namespace GLOO {
 
-    ClothNodeSmooth::ClothNodeSmooth(IntegratorType integrator_type, glm::vec3 color, glm::vec3 top_left_pos, float h, int dim) :
+    ClothNodeSmoothV2::ClothNodeSmoothV2(IntegratorType integrator_type, glm::vec3 color, glm::vec3 top_left_pos, float h, int dim) :
         SceneNode(),
         h_(h),
-        integrator_(IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type)),
+        integrator_(IntegratorFactory::CreateIntegrator<ClothSystemV2, ParticleState>(integrator_type)),
         state_(make_unique<ParticleState>()),
-        system_(make_unique<PendulumSystem>())
+        system_(make_unique<ClothSystemV2>())
         {
 
         shader_ = std::make_shared<PhongShader>();
@@ -40,7 +40,8 @@ namespace GLOO {
         state_->positions.resize(DIM*DIM);
         state_->velocities.resize(DIM*DIM);
 
-        
+        double uvDensity = 15.0f;
+        double triangleMass = uvDensity * 0.5f;
 
         auto indices = make_unique<IndexArray>();
 
@@ -48,8 +49,8 @@ namespace GLOO {
             for (float j = 0; j < DIM; j++) {
                 float r = 1.0f;
 
-                system_->AddMass(i*DIM + j, r, 0.088f);
-
+                // system_->AddMass(i*DIM + j, r, 0.088f);
+                system_->AddMass(i*DIM + j, triangleMass);
 
                 if (i > 0) {
                     // strucutral
@@ -119,26 +120,26 @@ namespace GLOO {
                 triangle_indices->push_back(v1);
                 triangle_indices->push_back(v2);
 
-                // system_->AddTriangle(v0, v1, v2,
-                //                     glm::vec2(j, i),
-                //                     glm::vec2(j + 1, i),
-                //                     glm::vec2(j, i + 1));
+                system_->AddTriangle(v0, v1, v2,
+                                    glm::vec2(j, i),
+                                    glm::vec2(j + 1, i),
+                                    glm::vec2(j, i + 1));
 
                 // Second triangle (Bottom-left, Top-right, Bottom-right)
                 triangle_indices->push_back(v2);
                 triangle_indices->push_back(v1);
                 triangle_indices->push_back(v3);
 
-                // system_->AddTriangle(v2, v1, v3,
-                //                     glm::vec2(j, i + 1),
-                //                     glm::vec2(j + 1, i),
-                //                     glm::vec2(j + 1, i + 1));
+                system_->AddTriangle(v2, v1, v3,
+                                    glm::vec2(j, i + 1),
+                                    glm::vec2(j + 1, i),
+                                    glm::vec2(j + 1, i + 1));
             }
         }
 
         cloth_mesh_->UpdateIndices(std::move(triangle_indices));
 
-        std::cout << "ClothNodeSmooth initialized with " << state_->positions.size() << " particles." << std::endl;
+        std::cout << "ClothNodeSmoothV2 initialized with " << state_->positions.size() << " particles." << std::endl;
         // Add the cloth mesh to the scene node
         auto cloth_node = make_unique<SceneNode>();
         cloth_node->CreateComponent<ShadingComponent>(shader_);
@@ -150,7 +151,7 @@ namespace GLOO {
 
     }
 
-    void ClothNodeSmooth::Update(double dt) {
+    void ClothNodeSmoothV2::Update(double dt) {
         // 1. Physics Integration
         *state_ = integrator_->Integrate(*system_, *state_, 0.0f, h_);
 
@@ -236,7 +237,7 @@ namespace GLOO {
         cloth_mesh_->UpdateNormals(std::move(normals));
     }
 
-    void ClothNodeSmooth::Restart() {
+    void ClothNodeSmoothV2::Restart() {
         auto positions = make_unique<PositionArray>();
         auto normals = make_unique<NormalArray>();
 

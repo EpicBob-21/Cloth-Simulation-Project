@@ -22,10 +22,10 @@ namespace GLOO {
 
     PendulumNode::PendulumNode(IntegratorType integrator_type, glm::vec3 color, float h) : 
         SceneNode(), 
+        h_(h),
         integrator_(IntegratorFactory::CreateIntegrator<PendulumSystem, ParticleState>(integrator_type)),
         state_(make_unique<ParticleState>()),
-        system_(make_unique<PendulumSystem>()),
-        h_(h) {
+        system_(make_unique<PendulumSystem>()) {
 
         shader_ = std::make_shared<PhongShader>();
         sphere_mesh_ = PrimitiveFactory::CreateSphere(0.1f, 25, 25);

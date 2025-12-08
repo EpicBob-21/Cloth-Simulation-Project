@@ -25,8 +25,9 @@ namespace GLOO {
         SceneNode(), 
         integrator_(IntegratorFactory::CreateIntegrator<CircleSystemBase, ParticleState>(integrator_type)),
         state_(make_unique<ParticleState>()),
-        system_(make_unique<CircleSystemBase>()),
-        h_(h) {
+        h_(h),
+        system_(make_unique<CircleSystemBase>())
+         {
 
         shader_ = std::make_shared<PhongShader>();
         sphere_mesh_ = PrimitiveFactory::CreateSphere(0.1f, 25, 25);

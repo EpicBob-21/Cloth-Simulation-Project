@@ -7,6 +7,7 @@
 #include "ForwardEulerIntegrator.hpp"
 #include "ForwardTrapezoidIntegrator.hpp"
 #include "CubicBarrierIntegrator.hpp"
+#include "BackwardEulerIntegrator.hpp"
 
 #include <stdexcept>
 
@@ -28,8 +29,10 @@ class IntegratorFactory {
           return make_unique<ForwardRK4Integrator<TSystem, TState>>();
         } else if (type == IntegratorType::AdaptiveRK45) {
           return make_unique<AdaptiveRK45Integrator<TSystem, TState>>();
-        } else if (type == IntegratorType::CubicBarrier) {
-          return make_unique<CubicBarrierIntegrator<TSystem, TState>>();
+        // } else if (type == IntegratorType::CubicBarrier) {
+        //   return make_unique<CubicBarrierIntegrator<TSystem, TState>>();
+        } else if (type == IntegratorType::BackwardEuler) {
+          return make_unique<BackwardEulerIntegrator<TSystem, TState>>();
         } else {
           throw std::runtime_error("Unknown integrator type!");
         }

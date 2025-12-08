@@ -40,6 +40,9 @@ int main(int argc, char** argv) {
     case 'c':
       integrator_type = IntegratorType::CubicBarrier;
       break;
+    case 'b':
+      integrator_type = IntegratorType::BackwardEuler;
+      break;
     default:
       throw std::runtime_error(
           "Unrecognized integrator type: " + std::string(1, argv[1][0]) + ".");

@@ -1,5 +1,5 @@
-#ifndef CLOTH_NODE_SMOOTH_H_
-#define CLOTH_NODE_SMOOTH_H_
+#ifndef CLOTH_NODE_V2_SMOOTH_H_
+#define CLOTH_NODE_V2_SMOOTH_H_
 
 #include "ParticleState.hpp"
 #include "ParticleSystemBase.hpp"
@@ -16,9 +16,9 @@
 
 
 namespace GLOO {
-    class ClothNodeSmooth : public SceneNode {
+    class ClothNodeSmoothV2 : public SceneNode {
         public:
-            ClothNodeSmooth(IntegratorType integrator_type, glm::vec3 material, glm::vec3 top_left_pos, float h, int dim = 8);
+            ClothNodeSmoothV2(IntegratorType integrator_type, glm::vec3 material, glm::vec3 top_left_pos, float h, int dim = 8);
             void Update(double dt) override;
             void Restart();
 
@@ -31,9 +31,9 @@ namespace GLOO {
             std::shared_ptr<ShaderProgram> shader_;
             std::shared_ptr<Material> material_;
             std::shared_ptr<Material> line_material_;
-            std::unique_ptr<IntegratorBase<PendulumSystem, ParticleState>> integrator_;
+            std::unique_ptr<IntegratorBase<ClothSystemV2, ParticleState>> integrator_;
             std::unique_ptr<ParticleState> state_;
-            std::unique_ptr<PendulumSystem> system_;
+            std::unique_ptr<ClothSystemV2> system_;
             std::vector<SceneNode*> points_;
             std::shared_ptr<VertexObject> all_line_;
 
