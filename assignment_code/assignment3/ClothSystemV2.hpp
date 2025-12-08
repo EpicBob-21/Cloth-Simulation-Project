@@ -30,13 +30,13 @@ private:
     std::vector<Spring> bend_springs_;
     std::vector<float> masses_;
     std::vector<int> fixed_particles_;
-    float damping_stiffness_ = 0.1f;
     bool wind_ = false;
     
     // Material properties
     float stretch_stiffness_ = 1000.0f;
     float shear_stiffness_ = 100.0f;
     // float bend_stiffness_ = 10.0f;
+    float damping_stiffness_ = 0.1f;
     // float damping_ = 0.1f;
 
     
@@ -54,7 +54,10 @@ public:
         // }
 
         auto df_dx = ComputeForceJacobian(state);  // ∂f/∂x
+        // std::cout << "Computed force Jacobian df/dx "  << df_dx.size() << std::endl;
         auto df_dv = ComputeDampingJacobian(state); // ∂f/∂v
+        // std::cout << "Computed force Damping df/dx "  << df_dv.size() << std::endl;
+
         auto M = GetMassMatrix();
 
         Eigen::VectorXf f0_eigen = ToEigenVector(f0);
@@ -69,8 +72,14 @@ public:
         Eigen::SparseMatrix<float> A = BuildSystemMatrix(
             df_dx, df_dv, dt);
 
+        // std::cout << "Built system matrix A " << std::endl;
+        // std::cout << A << std::endl;
+
         Eigen::VectorXf b = BuildRHS(
             f0_eigen, df_dx, v0_eigen, dt);
+
+        // std::cout << "Built RHS vector b" << std::endl;
+        // std::cout << b << std::endl;
 
         // std::vector<glm::vec3> b = BuildRHS(
         //     system, f0, df_dx, state.velocities, dt);
@@ -80,6 +89,14 @@ public:
             A, b, GetConstraints());
         
         std::vector<glm::vec3> delta_v = FromEigenVector(delta_v_eigen);
+
+        // for (size_t i = 0; i < delta_v.size(); ++i) {
+        //     std::cout << "Delta v for particle " << i << ": " 
+        //               << delta_v[i].x << ", " 
+        //               << delta_v[i].y << ", " 
+        //               << delta_v[i].z << std::endl;
+        // }
+
         return delta_v;
     }
 
@@ -93,6 +110,14 @@ public:
 
         // equation 6
         auto M = GetMassMatrix();
+        for (int k=0; k<M.outerSize(); ++k) {
+            for (Eigen::SparseMatrix<float>::InnerIterator it(M,k); it; ++it) {
+                if (std::isnan(it.value())) {
+                    throw std::runtime_error("NaN detected in mass matrix!");
+                }
+                // std::cout << "Mass matrix entry (" << it.row() << ", " << it.col() << "): " << it.value() << std::endl;
+            }
+        }
         return M - dt * df_dv - dt * dt * df_dx;
     }
 
@@ -152,6 +177,33 @@ public:
     // NEW: Methods for Backward Euler
     std::vector<glm::vec3> ComputeForces(const ParticleState& state) const {
         std::vector<glm::vec3> forces(state.positions.size(), glm::vec3(0));
+
+        for (auto& position : state.positions) {
+            if (std::isnan(position.x) || std::isnan(position.y) || std::isnan(position.z)) {
+                throw std::runtime_error("NaN detected in particle positions!");
+            }
+
+            // std::cout << "Particle position: " 
+            //           << position.x << ", " 
+            //           << position.y << ", " 
+            //           << position.z << std::endl;
+            
+        }
+
+        // for (const auto& triangle : triangles_) {
+        //     std::cout << "Triangle vertices: " 
+        //               << triangle.v0 << ", " 
+        //               << triangle.v1 << ", " 
+        //               << triangle.v2 << std::endl;
+        //     std::cout << "Triangle area: " << triangle.area << std::endl;
+        //     std::cout << "Triangle UVs: [" 
+        //               << triangle.uv0.x << ", " << triangle.uv0.y << "; "
+        //               << triangle.uv1.x << ", " << triangle.uv1.y << "; "
+        //               << triangle.uv2.x << ", " << triangle.uv2.y << "]" << std::endl;
+        //     std::cout << "Triangle UV inverse: [" 
+        //               << triangle.uv_inv[0][0] << ", " << triangle.uv_inv[0][1] << "; "
+        //               << triangle.uv_inv[1][0] << ", " << triangle.uv_inv[1][1] << "]" << std::endl;
+        // }
         
         int middle = forces.size() / 2;
 
@@ -165,7 +217,7 @@ public:
 
         if (wind_) {
             for (size_t i = 0; i < forces.size(); i++) {
-                forces[i] += glm::vec3(0, 10.0f, 0);
+                forces[i] += glm::vec3(0, -1.0f, 10.0f);
             }
 
             // std::cout << "after wind" << std::endl;
@@ -256,7 +308,7 @@ public:
         if (idx >= masses_.size()) {
             masses_.resize(idx + 1, 0.0f);
         }
-        masses_[idx] = mass;
+        masses_[idx] += mass;
     }
     
     void AddTriangle(int v0, int v1, int v2, 
@@ -311,59 +363,24 @@ public:
     void Blow() {
         wind_ = !wind_;
     }
-    
-    // Eigen::SparseMatrix<float> GetMassMatrix() const {
-    //     int n = masses_.size();
-    //     Eigen::SparseMatrix<float> M(3*n, 3*n);
-    //     std::vector<Eigen::Triplet<float>> triplets;
-        
-    //     for (int i = 0; i < n; i++) {
-    //         for (int d = 0; d < 3; d++) {
-    //             triplets.push_back(Eigen::Triplet<float>(
-    //                 3*i + d, 3*i + d, masses_[i]));
-    //         }
-    //     }
-        
-    //     M.setFromTriplets(triplets.begin(), triplets.end());
-    //     return M;
-    // }
 
     Eigen::SparseMatrix<float> GetMassMatrix() const {
         int N = masses_.size();
         int size = 3 * N;
         std::vector<Eigen::Triplet<float>> triplets;
         
+        // should be a diagonal 3n x 3n matrix 
         for (int i = 0; i < N; ++i) {
             // mass mi for x, y, z degrees of freedom
-            triplets.emplace_back(3 * i, 0, masses_[i]);
-            triplets.emplace_back(3 * i + 1, 1, masses_[i]);
-            triplets.emplace_back(3 * i + 2, 2, masses_[i]);
+            triplets.emplace_back(3 * i, 3 * i, masses_[i]);
+            triplets.emplace_back(3 * i + 1, 3 * i + 1, masses_[i]);
+            triplets.emplace_back(3 * i + 2, 3 * i + 2, masses_[i]);
         }
 
         Eigen::SparseMatrix<float> M(size, size);
         M.setFromTriplets(triplets.begin(), triplets.end());
         return M;
     }
-
-    // Eigen::SparseMatrix<float> ClothSystemV2::GetInverseMassMatrix() const {
-    //     int n = masses_.size();
-    //     int size = 3 * n;
-    //     std::vector<Eigen::Triplet<float>> triplets;
-        
-    //     for (int i = 0; i < n; ++i) {
-    //         float inv_m = 0.0f;
-    //         if (masses_[i] > 1e-6f) { // Prevent division by zero
-    //             inv_m = 1.0f / masses_[i];
-    //         }
-    //         triplets.emplace_back(3 * i, 0, inv_m);
-    //         triplets.emplace_back(3 * i + 1, 1, inv_m);
-    //         triplets.emplace_back(3 * i + 2, 2, inv_m);
-    //     }
-
-    //     Eigen::SparseMatrix<float> M_inv(size, size);
-    //     M_inv.setFromTriplets(triplets.begin(), triplets.end());
-    //     return M_inv;
-    // }
     
     std::vector<Constraint> GetConstraints() const {
         std::vector<Constraint> constraints;
@@ -385,33 +402,42 @@ private:
         // Compute w_u and w_v using Equation (9)
         glm::vec3 x1 = state.positions[tri.v1] - state.positions[tri.v0];
         glm::vec3 x2 = state.positions[tri.v2] - state.positions[tri.v0];
-        
-        // // UV differences (constant, from rest state)
-        // glm::vec2 duv1 = tri.uv1 - tri.uv0;
-        // glm::vec2 duv2 = tri.uv2 - tri.uv0;
-        
-        // // Compute (w_u, w_v) = (x1, x2) * [duv1, duv2]^-1
-        // float det = duv1.x * duv2.y - duv1.y * duv2.x;
-        // glm::mat2 uv_inv = glm::mat2(
-        //     duv2.y, -duv1.y,
-        //     -duv2.x, duv1.x
-        // ) / det;
+
+        // std::cout << "Computing stretch force for triangle (" 
+        //           << tri.v0 << ", " << tri.v1 << ", " << tri.v2 << ")" << std::endl;
+        // std::cout << "Positions: x0 = (" 
+        //           << state.positions[tri.v0].x << ", " << state.positions[tri.v0].y << ", " << state.positions[tri.v0].z << "), "
+        //           << "x1 = (" << state.positions[tri.v1].x << ", " << state.positions[tri.v1].y << ", " << state.positions[tri.v1].z << "), "
+        //           << "x2 = (" << state.positions[tri.v2].x << ", " << state.positions[tri.v2].y << ", " << state.positions[tri.v2].z << ")" << std::endl;
+
+        // for (const auto& triangle : triangles_) {
+        //     std::cout << "Triangle vertices: " 
+        //               << triangle.v0 << ", " 
+        //               << triangle.v1 << ", " 
+        //               << triangle.v2 << std::endl;
+        //     std::cout << "Triangle area: " << triangle.area << std::endl;
+        //     std::cout << "Triangle UVs: [" 
+        //               << triangle.uv0.x << ", " << triangle.uv0.y << "; "
+        //               << triangle.uv1.x << ", " << triangle.uv1.y << "; "
+        //               << triangle.uv2.x << ", " << triangle.uv2.y << "]" << std::endl;
+        //     std::cout << "Triangle UV inverse: [" 
+        //               << triangle.uv_inv[0][0] << ", " << triangle.uv_inv[0][1] << "; "
+        //               << triangle.uv_inv[1][0] << ", " << triangle.uv_inv[1][1] << "]" << std::endl;
+        // }
         
         glm::vec3 w_u = x1 * tri.uv_inv[0][0] + x2 * tri.uv_inv[1][0];
         glm::vec3 w_v = x1 * tri.uv_inv[0][1] + x2 * tri.uv_inv[1][1];
 
-        
-        // Condition C(x) from Equation (10)
-        // glm::vec2 C(
-        //     glm::length(w_u) - 1.0f,  // b_u = 1
-        //     glm::length(w_v) - 1.0f   // b_v = 1
-        // );
-        // C *= tri.area;
+        // std::cout << "w_u: (" << w_u.x << ", " << w_u.y << ", " << w_u.z << ")" << std::endl;
+        // std::cout << "w_v: (" << w_v.x << ", " << w_v.y << ", " << w_v.z << ")" << std::endl;
+
         float len_u = glm::length(w_u);
         float len_v = glm::length(w_v);
 
         float C_u = tri.area * (len_u - 1.0f);  
         float C_v = tri.area * (len_v - 1.0f);
+
+        // std::cout << "C_u: " << C_u << ", C_v: " << C_v << std::endl;
         
         // Force from Equation (7): f_i = -k * ∂C/∂x_i * C(x)
         // Need to compute ∂C/∂x for each vertex
@@ -458,6 +484,11 @@ private:
         }
 
         float k = stretch_stiffness_;
+
+        // std::cout << "Stretch force contributions for triangle (" 
+        //           << tri.v0 << ", " << tri.v1 << ", " << tri.v2 << "): "
+        //           << "dC_u_dx0 = (" << dC_u_dx0.x << ", " << dC_u_dx0.y << ", " << dC_u_dx0.z << "), "
+        //           << "C_u = " << C_u << ", C_v = " << C_v << std::endl;
     
         // Each vertex gets force from both C_u and C_v
         forces[tri.v0] += -k * (dC_u_dx0 * C_u + dC_v_dx0 * C_v);

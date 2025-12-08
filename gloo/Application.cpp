@@ -11,7 +11,7 @@ Application::Application(std::string app_name, glm::ivec2 window_size)
   InitializeGLFW();
   InitializeGUI();
 
-  scene_ = std::make_unique<Scene>(make_unique<SceneNode>());
+  scene_ = GLOO::make_unique<Scene>(GLOO::make_unique<SceneNode>());
   renderer_ = make_unique<Renderer>(*this);
 }
 

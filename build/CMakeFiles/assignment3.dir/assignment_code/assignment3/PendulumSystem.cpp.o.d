@@ -1388,4 +1388,6 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumSystem.cpp.o: \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ModifiedPCG.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream

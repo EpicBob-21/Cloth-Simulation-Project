@@ -1392,8 +1392,9 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNode.cpp.o: \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/SceneNode.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ModifiedPCG.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/SceneNode.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/components/ComponentBase.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/components/ComponentType.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/utils.hpp \
@@ -1507,80 +1508,8 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNode.cpp.o: \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ForwardRK4Integrator.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/AdaptiveRK45Integrator.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/CubicBarrierIntegrator.hpp \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/Dense \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/LU \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/misc/Kernel.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/misc/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/misc/Image.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/LU/FullPivLU.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/LU/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/LU/PartialPivLU.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/LU/Determinant.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/LU/InverseImpl.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/LU/arch/InverseSize4.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/LU/arch/../InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/Cholesky \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/Jacobi \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Jacobi/Jacobi.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Jacobi/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Cholesky/LLT.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Cholesky/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Cholesky/LDLT.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/QR \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/Householder \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Householder/Householder.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Householder/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Householder/HouseholderSequence.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Householder/BlockHouseholder.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/QR/HouseholderQR.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/QR/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/QR/FullPivHouseholderQR.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/QR/ColPivHouseholderQR.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/SVD \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/misc/RealSvd2x2.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/SVD/UpperBidiagonalization.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/SVD/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/SVD/SVDBase.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/SVD/JacobiSVD.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/SVD/BDCSVD.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/Geometry \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/OrthoMethods.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/EulerAngles.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Homogeneous.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/RotationBase.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Rotation2D.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Quaternion.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/AngleAxis.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Transform.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Translation.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Scaling.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Hyperplane.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/ParametrizedLine.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/AlignedBox.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/Umeyama.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/arch/Geometry_SIMD.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Geometry/arch/../InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/Eigenvalues \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/Tridiagonalization.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/./InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/RealSchur.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/./HessenbergDecomposition.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/././InternalHeaderCheck.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/EigenSolver.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/./RealSchur.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/./Tridiagonalization.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/ComplexSchur.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/./ComplexSchur.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/RealQZ.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/./RealQZ.h \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/BackwardEulerIntegrator.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothSystem.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/shaders/PhongShader.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/components/RenderingComponent.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/components/ShadingComponent.hpp \

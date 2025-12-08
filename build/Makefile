@@ -248,6 +248,54 @@ assignment_code/assignment3/ClothNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNode.cpp.s
 .PHONY : assignment_code/assignment3/ClothNode.cpp.s
 
+assignment_code/assignment3/ClothNodeSmooth.o: assignment_code/assignment3/ClothNodeSmooth.cpp.o
+.PHONY : assignment_code/assignment3/ClothNodeSmooth.o
+
+# target to build an object file
+assignment_code/assignment3/ClothNodeSmooth.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNodeSmooth.cpp.o
+.PHONY : assignment_code/assignment3/ClothNodeSmooth.cpp.o
+
+assignment_code/assignment3/ClothNodeSmooth.i: assignment_code/assignment3/ClothNodeSmooth.cpp.i
+.PHONY : assignment_code/assignment3/ClothNodeSmooth.i
+
+# target to preprocess a source file
+assignment_code/assignment3/ClothNodeSmooth.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNodeSmooth.cpp.i
+.PHONY : assignment_code/assignment3/ClothNodeSmooth.cpp.i
+
+assignment_code/assignment3/ClothNodeSmooth.s: assignment_code/assignment3/ClothNodeSmooth.cpp.s
+.PHONY : assignment_code/assignment3/ClothNodeSmooth.s
+
+# target to generate assembly for a file
+assignment_code/assignment3/ClothNodeSmooth.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNodeSmooth.cpp.s
+.PHONY : assignment_code/assignment3/ClothNodeSmooth.cpp.s
+
+assignment_code/assignment3/ClothNodeSmoothV2.o: assignment_code/assignment3/ClothNodeSmoothV2.cpp.o
+.PHONY : assignment_code/assignment3/ClothNodeSmoothV2.o
+
+# target to build an object file
+assignment_code/assignment3/ClothNodeSmoothV2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNodeSmoothV2.cpp.o
+.PHONY : assignment_code/assignment3/ClothNodeSmoothV2.cpp.o
+
+assignment_code/assignment3/ClothNodeSmoothV2.i: assignment_code/assignment3/ClothNodeSmoothV2.cpp.i
+.PHONY : assignment_code/assignment3/ClothNodeSmoothV2.i
+
+# target to preprocess a source file
+assignment_code/assignment3/ClothNodeSmoothV2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNodeSmoothV2.cpp.i
+.PHONY : assignment_code/assignment3/ClothNodeSmoothV2.cpp.i
+
+assignment_code/assignment3/ClothNodeSmoothV2.s: assignment_code/assignment3/ClothNodeSmoothV2.cpp.s
+.PHONY : assignment_code/assignment3/ClothNodeSmoothV2.s
+
+# target to generate assembly for a file
+assignment_code/assignment3/ClothNodeSmoothV2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment3.dir/build.make CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNodeSmoothV2.cpp.s
+.PHONY : assignment_code/assignment3/ClothNodeSmoothV2.cpp.s
+
 assignment_code/assignment3/PendulumNode.o: assignment_code/assignment3/PendulumNode.cpp.o
 .PHONY : assignment_code/assignment3/PendulumNode.o
 
@@ -1157,6 +1205,12 @@ help:
 	@echo "... assignment_code/assignment3/ClothNode.o"
 	@echo "... assignment_code/assignment3/ClothNode.i"
 	@echo "... assignment_code/assignment3/ClothNode.s"
+	@echo "... assignment_code/assignment3/ClothNodeSmooth.o"
+	@echo "... assignment_code/assignment3/ClothNodeSmooth.i"
+	@echo "... assignment_code/assignment3/ClothNodeSmooth.s"
+	@echo "... assignment_code/assignment3/ClothNodeSmoothV2.o"
+	@echo "... assignment_code/assignment3/ClothNodeSmoothV2.i"
+	@echo "... assignment_code/assignment3/ClothNodeSmoothV2.s"
 	@echo "... assignment_code/assignment3/PendulumNode.o"
 	@echo "... assignment_code/assignment3/PendulumNode.i"
 	@echo "... assignment_code/assignment3/PendulumNode.s"

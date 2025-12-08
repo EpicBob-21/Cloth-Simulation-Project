@@ -40,7 +40,7 @@ namespace GLOO {
         state_->positions.resize(DIM*DIM);
         state_->velocities.resize(DIM*DIM);
 
-        double uvDensity = 15.0f;
+        double uvDensity = 0.3f;
         double triangleMass = uvDensity * 0.5f;
 
         auto indices = make_unique<IndexArray>();
@@ -50,7 +50,6 @@ namespace GLOO {
                 float r = 1.0f;
 
                 // system_->AddMass(i*DIM + j, r, 0.088f);
-                system_->AddMass(i*DIM + j, triangleMass);
 
                 if (i > 0) {
                     // strucutral
@@ -125,6 +124,10 @@ namespace GLOO {
                                     glm::vec2(j + 1, i),
                                     glm::vec2(j, i + 1));
 
+                system_->AddMass(v0, triangleMass/3);
+                system_->AddMass(v1, triangleMass/3);
+                system_->AddMass(v2, triangleMass/3);
+
                 // Second triangle (Bottom-left, Top-right, Bottom-right)
                 triangle_indices->push_back(v2);
                 triangle_indices->push_back(v1);
@@ -134,6 +137,10 @@ namespace GLOO {
                                     glm::vec2(j, i + 1),
                                     glm::vec2(j + 1, i),
                                     glm::vec2(j + 1, i + 1));
+
+                system_->AddMass(v3, triangleMass/3);
+                system_->AddMass(v1, triangleMass/3);
+                system_->AddMass(v2, triangleMass/3);
             }
         }
 

@@ -1,6 +1,6 @@
-CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumNode.cpp.o: \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/PendulumNode.cpp \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/PendulumNode.hpp \
+CMakeFiles/assignment3.dir/assignment_code/assignment3/ClothNodeSmooth.cpp.o: \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothNodeSmooth.cpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothNodeSmooth.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ParticleState.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h \
@@ -1394,6 +1394,7 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/PendulumNode.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ModifiedPCG.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothSystemV2.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/SceneNode.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/components/ComponentBase.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/components/ComponentType.hpp \

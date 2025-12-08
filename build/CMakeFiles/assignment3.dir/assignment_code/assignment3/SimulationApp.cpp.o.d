@@ -1505,13 +1505,16 @@ CMakeFiles/assignment3.dir/assignment_code/assignment3/SimulationApp.cpp.o: \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ModifiedPCG.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/shaders/ShaderProgram.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/components/MaterialComponent.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/gloo/Material.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/PendulumNode.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/PendulumSystem.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
-  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothNode.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothNodeSmooth.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothSystemV2.hpp \
+  /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/assignment_code/assignment3/ClothNodeSmoothV2.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glm-0.9.9.8/glm/gtx/string_cast.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glm-0.9.9.8/glm/gtx/../glm.hpp \
   /Users/azhang/Documents/25-26/64400/project/Cloth-Simulation-Project/external/src/glm-0.9.9.8/glm/gtx/../gtc/type_precision.hpp \
